@@ -26,7 +26,8 @@ foreach ($files as $file) {
         if (!$reachedData) {
             if (preg_match("/^@RELATION (')?(?'relation'[^']*?)(?(1)')$/i",
                 trim($buffer),$matches)) {
-                $destination = fopen("converted/$filename-{$matches['relation']}.csv",'w+');
+//                $destination = fopen("converted/$filename-{$matches['relation']}.csv",'w+');
+                $destination = fopen("converted/$filename.csv",'w+');
             } else if (preg_match("/^@ATTRIBUTE\s+(')?(?'attribute'(?(1)[^']*|[^'\s]*))(?(1)')\s.*$/i",
                         trim($buffer),$matches)) {
                 $headers[] = '"'.trim($matches['attribute']).'"';
