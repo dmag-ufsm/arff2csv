@@ -44,7 +44,7 @@ foreach ($files as $file) {
             }
         } else {
             if (strstr($buffer,',') === false) {
-                $buffer = preg_replace('/\s+/',',',$buffer);
+                $buffer = preg_replace('/\s+/',',',trim($buffer));
             }
             fwrite($destination,PHP_EOL.preg_replace(
                 "/(['\"])?((?(1)[^'\"]*|[^'\",]+))(?(1)['\"])/","\"\\2\"",trim($buffer)
